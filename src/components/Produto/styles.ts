@@ -32,14 +32,14 @@ export const Card = styled(Link)`
   &:hover {
     transform: translateY(-4px);
   }
+
   @media (max-width: ${breakpoints.md}) {
 
-  width: 200px;
+  width: 260px;
   margin: 0 auto;
 
     img {
       object-fit: cover;
-      
     
     }
   }
