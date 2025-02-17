@@ -2,23 +2,13 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 
 
-
-export const Logo = styled.h1`
-  color: ${colors.azulMarinho};
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-`;
 export const Links = styled.ul`
   display: flex;
   margin-left: 40px;
 
-  
     @media(max-width: ${breakpoints.md}) {
-    
       margin-left: 0;
       display: block;
-
     }
   `
 
@@ -27,7 +17,7 @@ export const Links = styled.ul`
 
 export const HeaderBar = styled.header`
   background-color: ${colors.cinza};
-  padding:24px;
+  padding: 24px;
   border-radius: 16px;
   margin-bottom: 80px;
 
@@ -37,12 +27,31 @@ export const HeaderBar = styled.header`
       text-decoration: none;
       font-weight: bold;
     }
+    .img-logo {
+      width: 100px;
+      height: auto;
+      margin-right: 16px;
+    } 
+      
+
 
       @media (max-width: ${breakpoints.sm}) { 
         
         flex-direction: column;
         align-items: flex-start;
-      }
+      
+      
+      .img-logo {
+      width: 100px;
+      height: auto;
+      margin-right: 0px;
+    } 
+      
+      
+        }
+
+
+
 
   
 `

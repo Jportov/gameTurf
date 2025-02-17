@@ -86,7 +86,8 @@ export const Prices = styled.p`
   span {
     display: block;
     font-size: 12px;
-    color: ${colors.cinzaClaro};
+    color: ${colors.branca};
+    line-height: 20px;
   }
 `
 
@@ -123,6 +124,7 @@ export const CartItem = styled.li`
 
   ${TagContainer} {
     margin: 8px 8px 16px 0;
+    display: inline-block;
   }
 
   button {

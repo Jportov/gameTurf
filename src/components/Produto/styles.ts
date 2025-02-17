@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 import { TagContainer } from '../Tag/styles';
 
 export const Card = styled(Link)`
@@ -31,6 +31,17 @@ export const Card = styled(Link)`
 
   &:hover {
     transform: translateY(-4px);
+  }
+  @media (max-width: ${breakpoints.md}) {
+
+  width: 200px;
+  margin: 0 auto;
+
+    img {
+      object-fit: cover;
+      
+    
+    }
   }
 `;
 

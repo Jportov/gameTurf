@@ -207,7 +207,7 @@ const Checkout = () => {
               através dos nossos canais de atendimento ao cliente
             </p>
             <p className="margin-top">
-              Agradecemos por escolher a EPLAY e esperamos que desfrute do seu
+              Agradecemos por escolher a GameTurf e esperamos que desfrute do seu
               jogo!
             </p>
           </>
@@ -242,7 +242,7 @@ const Checkout = () => {
                   />
                 </S.InputGroup>
                 <S.InputGroup>
-                  <label htmlFor="cpf">Cpf</label>
+                  <label htmlFor="cpf">CPF</label>
                   <InputMask
                     type="text"
                     id="cpf"
@@ -378,7 +378,9 @@ const Checkout = () => {
                           mask="9999 9999 9999 9999"
                         />
                       </S.InputGroup>
-                      <S.InputGroup maxWidth="123px">
+                      </S.Row>
+                      <S.Row >
+                      <S.InputGroup maxWidth="123px"  className='row'>
                         <label htmlFor="expiresMonth">Mês do vencimento</label>
                         <InputMask
                           type="text"
@@ -408,6 +410,8 @@ const Checkout = () => {
                           mask="99"
                         />
                       </S.InputGroup>
+                      </S.Row>
+                      <S.Row>
                       <S.InputGroup maxWidth="48px">
                         <label htmlFor="cardCode">CVV</label>
                         <InputMask

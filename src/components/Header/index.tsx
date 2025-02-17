@@ -28,7 +28,7 @@ const Header = () => {
           <span/>
         </MenuHamburguer>
       <Link to="/">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo"  className='img-logo'/>
       </Link>
       <nav>
           <Links>

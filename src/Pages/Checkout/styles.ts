@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 type inputGroupProps = {
     maxWidth?: string;
@@ -20,6 +20,13 @@ export const Row = styled.div<rowProps>`
     align-items: center;
     column-gap: 24px;
     margin-top: ${(props) => props.marginTop || "0"};
+    
+    @media (max-width: ${breakpoints.md}) {
+        flex-direction: column;
+        max-width: 100%;
+        align-items: flex-start;
+    }
+            
 
 `
 
@@ -47,8 +54,13 @@ export const InputGroup = styled.div<inputGroupProps>`
         :hover {
             background-color: ${colors.easeGrey};
             }
-        
         }
+
+        @media (max-width: ${breakpoints.md}) {
+
+        margin-top: 16px;
+}
+    }
     
 `
 
@@ -71,5 +83,16 @@ margin-right: 16px;
         height: 13px;
         margin-right: 8px;
     }
+
+
+    @media (max-width: ${breakpoints.md}) {
+        font-size: 12px;
+        padding: 0px 4px;
+        margin-right: 8px;
+        margin-bottom: 16px;
+
+    
+    }
+
 `
 
