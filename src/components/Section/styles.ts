@@ -15,6 +15,11 @@ export const SectionContainer = styled.section<Omit<Props, 'title'>>`
         max-width: 640px;
     }
 
+    @media (max-width: ${breakpoints.md}) {
+        padding: 24px 0;
+        text-align: center;
+    }
+
     @media (max-width: ${breakpoints.sm}) {
         padding: 16px 0;
         text-align: center;

@@ -11,6 +11,10 @@ export const ProductListContainer = styled.section<Omit<Props, 'title' | 'isLoad
     background-color: ${props => props.background === 'black' ? colors.darkGray : colors.deepBlack};
   }
 
+  @media (max-width: ${breakpoints.md}) {
+    padding: 24px 0;
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     padding: 16px 0;
   }
@@ -28,6 +32,10 @@ export const ListProducts = styled.ul`
 
 
     @media (max-width: ${breakpoints.lg}) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: ${breakpoints.md}) {
         grid-template-columns: repeat(2, 1fr);
     }
 

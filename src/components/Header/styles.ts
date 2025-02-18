@@ -47,6 +47,22 @@ export const HeaderBar = styled.header`
       
 
 
+      @media (max-width: ${breakpoints.md}) { 
+        
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+      
+      
+      .img-logo {
+      width: 100px;
+      height: auto;
+      margin-right: 0px;
+    } 
+      
+      
+        }
+
       @media (max-width: ${breakpoints.sm}) { 
         
         flex-direction: column;

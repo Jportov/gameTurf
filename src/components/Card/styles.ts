@@ -23,6 +23,10 @@ export const Container = styled.div`
         line-height: 22px;
     }
 
+    @media (max-width: ${breakpoints.md}) {
+        padding: 20px;
+    }
+
     @media (max-width: ${breakpoints.sm}) {
         padding: 16px;
     }

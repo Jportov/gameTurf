@@ -46,6 +46,12 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  @media (max-width: ${breakpoints.md}) {
+    .container {
+      max-width: 85%;
+    }
+  }
+
   @media (max-width: ${breakpoints.sm}) {
     .container {
       max-width: 90%;

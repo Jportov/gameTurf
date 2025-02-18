@@ -10,6 +10,11 @@ export const FooterContainer = styled.footer`
     font-size:14px;
     margin-top: 40px;
 
+    @media (max-width: ${breakpoints.md}) {
+        padding: 24px;
+        text-align: center;
+    }
+
     @media (max-width: ${breakpoints.sm}) {
         padding: 16px;
         text-align: center;
