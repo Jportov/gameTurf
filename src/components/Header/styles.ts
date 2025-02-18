@@ -1,5 +1,17 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
+
+
+export const LinkHeader = styled(Link)`
+  color: ${colors.softWhite};
+  text-decoration: none;
+  font-weight: bold;
+
+
+`
+
+
 
 
 export const Links = styled.ul`
@@ -16,14 +28,14 @@ export const Links = styled.ul`
 
 
 export const HeaderBar = styled.header`
-  background-color: ${colors.cinza};
+  background-color: ${colors.darkGray};
   padding: 24px;
   border-radius: 16px;
   margin-bottom: 80px;
 
 
       a{ 
-      color: ${colors.branca};
+      color: ${colors.softWhite};
       text-decoration: none;
       font-weight: bold;
     }
@@ -113,7 +125,7 @@ export const LinkItem = styled.li`
       display: block;
       width: 100%;
       height: 2px;
-      background-color: ${colors.branca};
+      background-color: ${colors.softWhite};
       margin: 4px 0;
       transition: all 0.3s ease-out;
   
@@ -161,7 +173,7 @@ export const SpanNotification = styled.span`
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: ${colors.azulMarinho};
+  background-color: ${colors.vibrantBlue};
   color: white;
   font-size: 12px;
   font-weight: bold;

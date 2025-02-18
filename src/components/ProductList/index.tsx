@@ -1,17 +1,19 @@
 import { Game } from "../../Pages/Home";
 import { priceFormat } from "../../utils";
-import Produto from "../Produto";
-import { ListProducts, ProductListContainer, TitleProductList } from "./styles";
+import Loader from "../Loaders";
+import Product from "../Product";
+import * as S from "./styles";
 
 export type Props = {
   title?: string;
   background: "grey" | "black";
-  games: Game[];
+  games?: Game[];
   id?: string;
+  isLoading: boolean;
 };
 
 
-const ProductList = ({ background, title, games, id  }: Props) => {
+const ProductList = ({ background, title, games, id, isLoading }: Props) => {
   const getNameTags = (game: Game) => {
     const tags = [];
     if (game.release_Date) {
@@ -29,14 +31,20 @@ const ProductList = ({ background, title, games, id  }: Props) => {
     return tags;
   };
 
+  if(isLoading) {
+
+    return <Loader />
+  }
+
   return (
-    <ProductListContainer id={id} background={background} games={games}>
+    <S.ProductListContainer id={id} background={background} games={games}>
       <div className="container">
-        {title && <TitleProductList>{title}</TitleProductList>}
-        <ListProducts>
-          {games.map((game) => (
+        {title && <S.TitleProductList>{title}</S.TitleProductList>}
+        <S.ListProducts>
+          {games &&
+           games.map((game) => (
             <li key={game.id}>
-              <Produto
+              <Product
                 id={game.id}
                 category={game.details.category}
                 description={game.description}
@@ -47,9 +55,9 @@ const ProductList = ({ background, title, games, id  }: Props) => {
               />
             </li>
           ))}
-        </ListProducts>
+        </S.ListProducts>
       </div>
-    </ProductListContainer>
+    </S.ProductListContainer>
   );
 };
 

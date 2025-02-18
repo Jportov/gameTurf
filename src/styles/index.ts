@@ -1,14 +1,15 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const colors = {
-  cinza: '#1C1C1E',       // Cinza bem escuro
-  preta: '#0A0A0B',       // Preto profundo
-  branca: '#F5F5F7',      // Branco suave
-  azulMarinho: '#0A3D62', // Azul-marinho sofisticado
-  cinzaClaro: '#4A4A4E',  // Cinza médio para contraste
-  easeGrey: '#2C2C2E'     // Tom escuro para fundo suave
+  darkGray: '#1C1C1E',       // Very dark gray
+  deepBlack: '#0A0A0B',      // Deep black
+  softWhite: '#F5F5F7',      // Soft white
+  vibrantBlue: '#007AFF',    // Bright, vibrant blue (new)
+  mediumGray: '#4A4A4E',     // Medium gray for contrast
+  easeGray: '#2C2C2E',       // Dark tone for soft background      // Light blue for hover states
+  neonGreen: '#2ECC71',      // Neon green for success indicators
+  softRed: '#E74C3C',        // Soft red for errors and alerts
 };
-
 
 export const breakpoints = {
   sm: '576px',
@@ -28,8 +29,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${colors.preta};
-    color: ${colors.branca};
+    background-color: ${colors.deepBlack};
+    color: ${colors.softWhite};
     padding-top: 80px;
   }
 
@@ -43,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
       max-width: 80%;
     }
 
+    
 `
 
 export const Tag = styled.div`

@@ -8,17 +8,14 @@ const Categories = () => {
     const {data: sportsGames, isLoading: isLoadingSports} = useGetSportsQuery();
 
 
-    if (isLoadingAction || isLoadingFight || isLoadingRPG || isLoadingSimulation || isLoadingSports) {
-        return <div>Loading...</div>;
-    }
 
     return (
         <>
-            <ProductList title="Ação" background="black" games={actionGames || []} id="action" />
-            <ProductList title="Luta" background="grey" games={fightGames || []} id="fight" />
-            <ProductList title="Esportes" background="black" games={sportsGames || []} id="sports" />
-            <ProductList title="Simulacao" background="grey" games={simulationGames || []} id="simulation" />
-            <ProductList title="RPG" background="black" games={rpgGames || []} id="rpg" />
+            <ProductList title="Ação" background="black" games={actionGames || []} id="action" isLoading={isLoadingAction} />
+            <ProductList title="Luta" background="grey" games={fightGames || []} id="fight" isLoading={isLoadingFight} />
+            <ProductList title="Esportes" background="black" games={sportsGames || []} id="sports" isLoading={isLoadingRPG} />
+            <ProductList title="Simulacao" background="grey" games={simulationGames || []} id="simulation" isLoading={isLoadingSimulation} />
+            <ProductList title="RPG" background="black" games={rpgGames || []} id="rpg" isLoading={isLoadingSports} />
         </>
     );
 }

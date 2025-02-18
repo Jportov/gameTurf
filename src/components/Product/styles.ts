@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { breakpoints, colors } from '../../styles';
+import { colors } from '../../styles';
 import { TagContainer } from '../Tag/styles';
 
 export const Card = styled(Link)`
-  background-color: ${colors.cinza};
+  background-color: ${colors.darkGray};
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -14,7 +14,8 @@ export const Card = styled(Link)`
   flex-direction: column;
   position: relative;
   text-decoration: none;
-  color: ${colors.branca};
+  color: ${colors.softWhite};
+  height: 100%;
 
   img {
     display: block;
@@ -33,19 +34,9 @@ export const Card = styled(Link)`
     transform: translateY(-4px);
   }
 
-  @media (max-width: ${breakpoints.md}) {
-
-  width: 260px;
-  margin: 0 auto;
-
-    img {
-      object-fit: cover;
-    
-    }
-  }
 `;
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 18px;
   display: block;
@@ -53,7 +44,7 @@ export const Titulo = styled.h3`
   margin-bottom: 8px;
 `;
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;

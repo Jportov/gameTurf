@@ -1,11 +1,11 @@
-import { BannerHero, HeroInfos, TagBanner } from "./styles";
+import * as S from "./styles";
 
 import { useDispatch } from "react-redux";
 import { Game } from "../../Pages/Home";
 import { add, open } from "../../store/reducers/cart";
 import { priceFormat } from "../../utils";
-import { Preco } from "../Banner/styles";
-import { BtnComprar } from "../Button/styles";
+import { Price } from "../Banner/styles";
+import { ButtonContainer } from "../Button/styles";
 import Tag from "../Tag";
 
 
@@ -23,25 +23,25 @@ const Hero = ({ game }: Props) => {
     }
 
     return  (
-        <BannerHero style={{backgroundImage: `url(${game.media.cover})`}}>
+        <S.BannerHero style={{backgroundImage: `url(${game.media.cover})`}}>
             <div className="container">
-                <TagBanner>   
+                <S.TagBanner>   
                 <Tag>{game.details.category}</Tag>
                 <Tag>{game.details.system}</Tag>
-                </TagBanner>
-                <HeroInfos>
+                </S.TagBanner>
+                <S.HeroInfos>
                     <h2>{game.name}</h2>
-                    <Preco>{game.prices.discount && (<span> De {priceFormat(game.prices.old)}<br/></span>
+                    <Price>{game.prices.discount && (<span> De {priceFormat(game.prices.old)}<br/></span>
                     )}
                     {game.prices.current && (<>
                     Por apenas {priceFormat(game.prices.current)}</>)}
-                    </Preco>
+                    </Price>
                     {game.prices.current && ( 
-                        <BtnComprar type="button" onClick={addTocart}>Adicionar ao Carrinho</BtnComprar>    
+                        <ButtonContainer type="button" title="Adicionar ao Carrinho" onClick={addTocart}>Adicionar ao Carrinho</ButtonContainer>    
                     )}
-                </HeroInfos>
+                </S.HeroInfos>
             </div>
-        </BannerHero>
+        </S.BannerHero>
     )
 }
 

@@ -1,7 +1,5 @@
-import { useDispatch } from "react-redux";
 import Tag from "../Tag";
-import { Card, Descricao, Infos, Titulo } from "./styles";
-
+import * as S from "./styles";
 type Props = {
   id: number;
   title: string;
@@ -12,11 +10,11 @@ type Props = {
   image: string;
 };
 
-const Produto = ({ title, category, system, description, infos, image, id }: Props) => {
-  const dispatch = useDispatch();
+const Product = ({ title, category, system, description, infos, image, id }: Props) => {
+
   if (!title) return null;
 
-  const getDescricao = (description: string) => {
+  const getDescription = (description: string) => {
     if (description.length > 90) {
       return description.slice(0, 93) + "...";
     }
@@ -24,19 +22,19 @@ const Produto = ({ title, category, system, description, infos, image, id }: Pro
   };
 
   return (
-    <Card to={`/product/${id}`}>
+    <S.Card  title={`Clique aqui para ver mais detalhes sobre o jogo: ${title}`}  to={`/product/${id}`}>
       <img src={image} alt={title} />
-      <Infos>
+      <S.Infos>
         {infos.map((info) => (
           <Tag key={info}>{info}</Tag>
         ))}
-      </Infos>
-      <Titulo>{title}</Titulo>
+      </S.Infos>
+      <S.Title>{title}</S.Title>
       <Tag>{category}</Tag>
       <Tag>{system}</Tag>
-      <Descricao>{getDescricao(description) || "Descrição não disponível."}</Descricao>
-    </Card>
+      <S.Description>{getDescription(description) || "Descrição não disponível."}</S.Description>
+    </S.Card>
   );
 };
 
-export default Produto;
+export default Product;

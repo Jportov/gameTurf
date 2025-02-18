@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { Props } from '.';
 import { breakpoints, colors } from '../../styles';
-import { Card } from '../Produto/styles';
+import { Card } from '../Product/styles';
 
-export const ProductListContainer = styled.section<Omit<Props, 'title'>>`
+export const ProductListContainer = styled.section<Omit<Props, 'title' | 'isLoading'>>`
   padding: 32px 0;
-  background-color: ${props => props.background === 'black' ? colors.preta : colors.cinza};
+  background-color: ${props => props.background === 'black' ? colors.deepBlack : colors.darkGray};
 
   ${Card} {
-    background-color: ${props => props.background === 'black' ? colors.cinza : colors.preta};
+    background-color: ${props => props.background === 'black' ? colors.darkGray : colors.deepBlack};
   }
 `;
 
@@ -35,7 +35,7 @@ export const ListProducts = styled.ul`
 export const TitleProductList = styled.h2`
   font-size: 18px;
   margin-bottom: 10px;
-  color: ${colors.branca};
+  color: ${colors.softWhite};
   font-weight: bold;
   margin-top: 10px;
 `;

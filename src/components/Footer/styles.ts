@@ -5,14 +5,14 @@ import { colors } from "../../styles";
 
 export const FooterContainer = styled.footer`
 
-    background-color: ${colors.cinza};
+    background-color: ${colors.darkGray};
     padding: 32px 0;
     font-size:14px;
     margin-top: 40px;
 `
 
-export const TituloFooter = styled.h4`
-    color: ${colors.branca};
+export const FooterTitle = styled.h4`
+    color: ${colors.softWhite};
     font-size:16px;
     font-weight:bold;
 `
@@ -25,7 +25,7 @@ margin-top:16px;
 
 export const FooterLink = styled(HashLink)`
     font-size:14px;
-    color: ${colors.cinzaClaro};
+    color: ${colors.easeGray};
     text-decoration: none;
     margin-right:8px;
     cursor:pointer;

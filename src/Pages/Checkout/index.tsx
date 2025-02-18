@@ -31,6 +31,7 @@ const Checkout = () => {
   const [installments, setInstallments] = useState<Installment[]>([])
   const dispatch = useDispatch()
 
+ 
   const totalPrice = getTotalPrice(items)
 
   const form = useFormik({
@@ -74,31 +75,24 @@ const Checkout = () => {
       cardOwner: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       cpfCardOwner: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       cardDisplayName: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       cardNumber: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       expiresMonth: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       expiresYear: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       cardCode: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
-
       installments: Yup.number().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       )
@@ -293,7 +287,7 @@ const Checkout = () => {
             </>
           </Card>
           <Card title="Pagamento">
-            <div>
+            <>
               <S.TabButton
                 isActive={!payWithCard}
                 onClick={() => setPayWithCard(false)}
@@ -381,7 +375,7 @@ const Checkout = () => {
                       </S.Row>
                       <S.Row >
                       <S.InputGroup maxWidth="123px"  className='row'>
-                        <label htmlFor="expiresMonth">Mês do vencimento</label>
+                        <label htmlFor="expiresMonth">Mês de expiração</label>
                         <InputMask
                           type="text"
                           id="expiresMonth"
@@ -396,7 +390,8 @@ const Checkout = () => {
                         />
                       </S.InputGroup>
                       <S.InputGroup maxWidth="123px">
-                        <label htmlFor="expiresYear">Ano do vencimento</label>
+                        <label htmlFor="expiresYear">Ano de expiração
+                        </label>
                         <InputMask
                           type="text"
                           id="expiresYear"
@@ -438,20 +433,18 @@ const Checkout = () => {
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
                           className={
-                            checkInputHasError('installments') ? 'error' : ''
+                            checkInputHasError('installments') ? '  ' : ''
                           }
                         >
-                          {[
-                            installments.map((installment) => (
-                              <option
-                                value={installment.quantity}
-                                key={installment.quantity}
-                              >
-                                {installment.quantity}x de{' '}
-                                {installment.formattedAmount}
-                              </option>
-                            ))
-                          ]}
+                          {installments.map((installment) => (
+                            <option
+                              value={installment.quantity}
+                              key={installment.quantity}
+                            >
+                              {installment.quantity}x de{' '}
+                              {installment.formattedAmount}
+                            </option>
+                          ))}
                         </select>
                       </S.InputGroup>
                     </S.Row>
@@ -467,7 +460,7 @@ const Checkout = () => {
                   </p>
                 )}
               </div>
-            </div>
+            </>
           </Card>
           <ButtonContainer
             type="submit"

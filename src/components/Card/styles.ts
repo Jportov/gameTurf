@@ -3,14 +3,14 @@ import { colors } from "../../styles";
 
 export const Container = styled.div`
     border-radius: 8px;
-    background-color: ${colors.cinza};
+    background-color: ${colors.darkGray};
     padding: 24px;
     margin-bottom: 40px;    
 
     h2, h3 {
         font-size: 18px;
         font-weight: bold;
-        color: ${colors.branca};
+        color: ${colors.softWhite};
         margin-bottom: 24px;
     }
 

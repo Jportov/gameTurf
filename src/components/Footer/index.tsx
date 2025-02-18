@@ -1,34 +1,34 @@
-import { CopyFooter, FooterContainer, FooterLink, FooterSection, LinksFooter, TituloFooter } from "./styles"
+import * as S from "./styles"
 
 
 const dataAtual = new Date().getFullYear()
 
-    
+
 const Footer = () => (
-    <FooterContainer>   
+    <S.FooterContainer>
         <div className="container">
-            <FooterSection>
-                <TituloFooter>Categorias</TituloFooter>
-                <LinksFooter>
-                    <li><FooterLink to="/categories#action">Ação</FooterLink></li>
-                    <li><FooterLink to="/categories#fight">Luta</FooterLink></li>
-                    <li><FooterLink to="/categories#sports">Esportes</FooterLink></li>
-                    <li><FooterLink to="/categories#simulation">Simulação</FooterLink></li>
-                    <li><FooterLink to="/categories#rpg">RPG</FooterLink></li>
-                </LinksFooter>
-            </FooterSection>
-            <FooterSection>
-                <TituloFooter>Acesso rapido</TituloFooter>
-                <LinksFooter> 
-                <li><FooterLink to="/#on-sale">Promoções</FooterLink></li>
-                <li><FooterLink to="/#coming-soon">Em Breve</FooterLink></li> 
-                </LinksFooter>
-            </FooterSection>
+            <S.FooterSection>
+                <S.FooterTitle>Categorias</S.FooterTitle>
+                <S.LinksFooter>
+                    <li><S.FooterLink title="Clique aqui para acessar os jogos de ação" to="/categories#action">Ação</S.FooterLink></li>
+                    <li><S.FooterLink title="Clique aqui para acessar os jogos de lutas" to="/categories#fight">Luta</S.FooterLink></li>
+                    <li><S.FooterLink title="Clique aqui para acessar os jogos de esportes" to="/categories#sports">Esportes</S.FooterLink></li>
+                    <li><S.FooterLink title="Clique aqui para acessar os jogos de simulação" to="/categories#simulation">Simulação</S.FooterLink></li>
+                    <li><S.FooterLink title="Clique aqui para acessar os jogos de RPG" to="/categories#rpg">RPG</S.FooterLink></li>
+                </S.LinksFooter>
+            </S.FooterSection>
+            <S.FooterSection>
+                <S.FooterTitle>Acesso rapido</S.FooterTitle>
+                <S.LinksFooter>
+                <li><S.FooterLink title="Clique aqui para acessar os jogos em promoção" to="/#on-sale">Promoções</S.FooterLink></li>
+                <li><S.FooterLink title="Clique aqui para acessar os jogos que serão lançados em breve" to="/#coming-soon">Em Breve</S.FooterLink></li>
+                </S.LinksFooter>
+            </S.FooterSection>
             <div>
-                <CopyFooter>{dataAtual} - &copy; Game Turf todos os direitos reservados.</CopyFooter>
+                <S.CopyFooter>{dataAtual} - &copy; Game Turf todos os direitos reservados.</S.CopyFooter>
             </div>
         </div>
-    </FooterContainer>
+    </S.FooterContainer>
 )
 
 

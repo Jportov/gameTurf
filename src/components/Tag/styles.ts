@@ -6,8 +6,8 @@ import { colors } from "../../styles";
 
 
 export const TagContainer = styled.div<Props>`
-    background-color: ${colors.azulMarinho};
-    color: ${colors.branca};
+    background-color: ${colors.vibrantBlue};
+    color: ${colors.softWhite};
     font-size: ${(props) => (props.size === 'big' ? '16px' : '10px' )};
     font-weight: bold;
     padding: ${(props) => (props.size === 'big' ?  '8px' : '4px 6px') };

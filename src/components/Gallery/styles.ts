@@ -28,8 +28,9 @@ transisiotn: opacity 5s ease;
 
 export const GalleryItem = styled.li`
 position: relative;
+cursor: zoom-in;
     > img {
-border: 2px solid ${colors.branca};
+border: 2px solid ${colors.softWhite};
 border-radius: 8px;
 width: 150px;
 height: 150px;  
@@ -80,6 +81,15 @@ export const ModalContent = styled.div`
             justify-content: space-between;
     
     }
+
+    .cloneBtn {
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+        
+        }
+
+
 
     h4 {
         font-size: 18px;

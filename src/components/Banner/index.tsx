@@ -1,36 +1,34 @@
 import { useGetFeaturedGameQuery } from '../../services/api';
 import { priceFormat } from '../../utils';
 import Button from '../Button';
+import Loader from '../Loaders';
 import Tag from '../Tag';
-import { ImgBanner, Preco, Titulo } from './styles';
+import * as S from './styles';
 
 const Banner = () => {
 const { data: game, isLoading } = useGetFeaturedGameQuery ();
 
-if (isLoading) {
-    return <h3>Carregando...</h3>;
-}
 
 if (!game) {
-    return <h3>Nenhum jogo encontrado</h3>;
+    return <Loader />;
 }
 
 return (
-    <ImgBanner style={{ backgroundImage: `url(${game.media.cover})` }}>
+    <S.ImgBanner style={{ backgroundImage: `url(${game.media.cover})` }}>
     <div className="container">
         <Tag size="big" children={'Destaque do dia'} />
         <div>
-            <Titulo>{game.name}</Titulo>
-            <Preco>
+            <S.Title>{game.name}</S.Title>
+            <S.Price>
             De <span>{priceFormat(game.prices.old)}</span> 
             <br/> por apenas {priceFormat(game.prices.current)}
-        </Preco>
+        </S.Price>
         </div>
         <Button type="link" to={`/product/${game.id}`} title="Clique aqui para aproveitar essa oferta">
         Aproveitar
         </Button>
     </div>
-    </ImgBanner>
+    </S.ImgBanner>
 );
 };
 

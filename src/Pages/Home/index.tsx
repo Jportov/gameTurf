@@ -32,19 +32,15 @@ export interface Game  {
 }
 
 const Home = () => {
-        const { data: onSalesGames } = useGetOnSaleQuery();
-        const { data: soonGames } = useGetSoonQuery();
-
-        if (!onSalesGames || !soonGames) {
-                return <div>Loading...</div>;
-        }
+        const { data: onSalesGames, isLoading: isLoadingSale } = useGetOnSaleQuery();
+        const { data: soonGames, isLoading: isLoadingSoon } = useGetSoonQuery();
 
         return  (
 
                 <>
                         <Banner />
-                        <ProductList title="Promoções" background="grey" games={onSalesGames} id="on-sale" />
-                        <ProductList title="Em breve" background="black" games={soonGames} id="coming-soon" />
+                        <ProductList title="Promoções" background="grey" games={onSalesGames} id="on-sale" isLoading={isLoadingSale} />
+                        <ProductList title="Em breve" background="black" games={soonGames} id="coming-soon" isLoading={isLoadingSoon} />
                 </>
                 
                 )

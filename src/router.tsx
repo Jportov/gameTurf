@@ -6,7 +6,7 @@ import ProductPage from "./Pages/Product";
 
 
 
-const Rotas = ()=> (
+const RoutesComponent = ()=> (
 
   <Routes>
     <Route path="/" element={<Home/>}/>
@@ -16,4 +16,4 @@ const Rotas = ()=> (
   </Routes>
 )
 
-export default Rotas;
+export default RoutesComponent;

@@ -5,7 +5,7 @@ import { colors } from '../../styles';
 
 export const SectionContainer = styled.section<Omit<Props, 'title'>>`
     padding: 32px 0;
-    background-color: ${props => props.background === 'black' ? colors.preta : colors.cinza};
+    background-color: ${props => props.background === 'black' ? colors.deepBlack : colors.darkGray};
     overflow: auto;
 
     p {
@@ -20,7 +20,7 @@ export const SectionContainer = styled.section<Omit<Props, 'title'>>`
 export const TitleSection = styled.h2`
     font-size: 18px;
     margin-bottom: 40px;
-    color: ${colors.branca};
+    color: ${colors.softWhite};
     font-weight: bold;
     margin-top: 10px;
 

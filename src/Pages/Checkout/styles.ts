@@ -16,7 +16,7 @@ type tabButtonProps = {
 
 export const Row = styled.div<rowProps>`
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
     column-gap: 24px;
     margin-top: ${(props) => props.marginTop || "0"};
@@ -39,22 +39,30 @@ export const InputGroup = styled.div<inputGroupProps>`
         font-size: 14px;
         margin-bottom: 8px;
         display: block;
+        margin-top: 16px;
         
     }
 
     input, select {
-        background-color: ${colors.branca};
+        background-color: ${colors.softWhite};
         height: 32px;
         font-size: 14px;
         padding: 0 8px;
-        border: 1px solid ${colors.branca};
+        border: 1px solid ${colors.softWhite};
         border-radius: 4px;
         width: 100%;
+
         
+       &.error {
+            border: 1px solid ${colors.softRed};
+       } 
+
         :hover {
-            background-color: ${colors.easeGrey};
+            background-color: ${colors.easeGray};
             }
         }
+
+
 
         @media (max-width: ${breakpoints.md}) {
 
@@ -70,8 +78,8 @@ height: 32px;
 border-radius: 8px;
 font-size: 14px;
 font-weight: bold;
-color: ${colors.branca};
-background-color: ${(props) => (props.isActive ? colors.azulMarinho : colors.preta)};
+color: ${colors.softWhite};
+background-color: ${(props) => (props.isActive ? colors.vibrantBlue : colors.deepBlack)};
 padding: 0px 8px;
 border: none;
 cursor: pointer;
