@@ -39,12 +39,18 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
-    @media (max-width: ${breakpoints.lg}) {
+
+  @media (max-width: ${breakpoints.lg}) {
     .container {
       max-width: 80%;
     }
+  }
 
-    
+  @media (max-width: ${breakpoints.sm}) {
+    .container {
+      max-width: 90%;
+    }
+  }
 `
 
 export const Tag = styled.div`

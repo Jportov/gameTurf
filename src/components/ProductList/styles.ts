@@ -10,6 +10,10 @@ export const ProductListContainer = styled.section<Omit<Props, 'title' | 'isLoad
   ${Card} {
     background-color: ${props => props.background === 'black' ? colors.darkGray : colors.deepBlack};
   }
+
+  @media (max-width: ${breakpoints.sm}) {
+    padding: 16px 0;
+  }
 `;
 
 export const ListProducts = styled.ul`

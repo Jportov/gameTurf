@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Props } from '.';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 
 
 export const SectionContainer = styled.section<Omit<Props, 'title'>>`
@@ -15,6 +15,10 @@ export const SectionContainer = styled.section<Omit<Props, 'title'>>`
         max-width: 640px;
     }
 
+    @media (max-width: ${breakpoints.sm}) {
+        padding: 16px 0;
+        text-align: center;
+    }
 `
 
 export const TitleSection = styled.h2`

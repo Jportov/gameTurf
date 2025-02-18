@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 export const Container = styled.div`
     border-radius: 8px;
@@ -21,5 +21,9 @@ export const Container = styled.div`
     p {
         font-size: 14px;
         line-height: 22px;
+    }
+
+    @media (max-width: ${breakpoints.sm}) {
+        padding: 16px;
     }
 `;

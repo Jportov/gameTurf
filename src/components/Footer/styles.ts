@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
-import { colors } from "../../styles";
+import { breakpoints, colors } from "../../styles";
 
 
 export const FooterContainer = styled.footer`
@@ -9,6 +9,11 @@ export const FooterContainer = styled.footer`
     padding: 32px 0;
     font-size:14px;
     margin-top: 40px;
+
+    @media (max-width: ${breakpoints.sm}) {
+        padding: 16px;
+        text-align: center;
+    }
 `
 
 export const FooterTitle = styled.h4`
