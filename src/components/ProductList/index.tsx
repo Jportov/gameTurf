@@ -1,4 +1,4 @@
-import { Game } from "../../Pages/Home";
+
 import { priceFormat } from "../../utils";
 import Loader from "../Loaders";
 import Product from "../Product";

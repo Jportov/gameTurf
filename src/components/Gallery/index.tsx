@@ -6,7 +6,7 @@ import * as S from "./styles";
 import iconeFechar from "../../assets/images/fechar.png";
 import iconePlay from "../../assets/images/play.png";
 import zoom from "../../assets/images/zoom.png";
-import { GalleryItemProps } from '../../Pages/Home';
+
 
 
 

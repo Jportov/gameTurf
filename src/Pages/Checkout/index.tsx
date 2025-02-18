@@ -433,7 +433,7 @@ const Checkout = () => {
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
                           className={
-                            checkInputHasError('installments') ? '  ' : ''
+                            checkInputHasError('installments') ? 'error' : ''
                           }
                         >
                           {installments.map((installment) => (

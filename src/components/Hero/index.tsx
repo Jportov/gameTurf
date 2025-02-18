@@ -1,8 +1,8 @@
 import * as S from "./styles";
 
 import { useDispatch } from "react-redux";
-import { Game } from "../../Pages/Home";
 import { add, open } from "../../store/reducers/cart";
+
 import { priceFormat } from "../../utils";
 import { Price } from "../Banner/styles";
 import { ButtonContainer } from "../Button/styles";
