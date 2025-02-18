@@ -4,6 +4,15 @@
 
 O GameTurf é uma plataforma inovadora projetada para fornecer uma experiência de jogo imersiva e interativa. Este projeto combina várias tecnologias modernas para criar um ambiente de jogo robusto e escalável. O objetivo do GameTurf é oferecer uma interface de usuário intuitiva, desempenho otimizado e uma arquitetura flexível que permita fácil manutenção e expansão.
 
+## Funcionalidades
+
+- **Página Inicial**: Exibe os jogos em destaque e em promoção.
+- **Categorias**: Lista jogos por categorias como Ação, Luta, Esportes, Simulação e RPG.
+- **Detalhes do Produto**: Exibe informações detalhadas sobre cada jogo, incluindo descrição, desenvolvedor, editora e idiomas suportados.
+- **Carrinho de Compras**: Permite adicionar e remover jogos do carrinho, visualizar o total e prosseguir para o checkout.
+- **Checkout**: Formulário para finalizar a compra com opções de pagamento por cartão de crédito ou boleto bancário.
+- **Galeria**: Exibe imagens e vídeos dos jogos em uma galeria interativa.
+
 ## Tecnologias Utilizadas
 
 ### Frontend
@@ -12,50 +21,63 @@ O GameTurf é uma plataforma inovadora projetada para fornecer uma experiência 
 - **Redux**: Gerenciamento de estado previsível para aplicativos JavaScript.
 - **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
 - **Styled-Components**: Biblioteca para estilização de componentes em React utilizando tagged template literals.
+- **Formik**: Biblioteca para construção de formulários em React.
+- **Yup**: Biblioteca para validação de formulários.
+- **React Router**: Biblioteca para roteamento em aplicações React.
 
 ### Backend
 
-- **Node.js**: Ambiente de execução JavaScript server-side.
-- **Express**: Framework web para Node.js, utilizado para construir APIs RESTful.
-- **TypeScript**: Utilizado também no backend para garantir tipagem estática.
-- **MongoDB**: Banco de dados NoSQL orientado a documentos, utilizado para armazenamento de dados.
-- **Mongoose**: Biblioteca de modelagem de dados para MongoDB e Node.js.
-
-### DevOps e Infraestrutura
-
-- **Docker**: Plataforma para desenvolvimento, envio e execução de aplicações em containers.
-- **Kubernetes**: Sistema de orquestração de containers para automação de implantação, escalonamento e operações de aplicativos em containers.
-- **Jenkins**: Ferramenta de integração contínua e entrega contínua (CI/CD).
-- **AWS**: Amazon Web Services, utilizado para hospedagem e serviços de infraestrutura.
+- **Fake API**: Utilização de uma API fake para simulação de dados.
 
 ### Testes
 
 - **Jest**: Framework de testes em JavaScript, utilizado para testes unitários e de integração.
-- **Cypress**: Ferramenta de teste end-to-end para aplicações web.
+- **Testing Library**: Conjunto de utilitários para teste de componentes React.
 
 ## Dependências
 
 ### Dependências de Produção
 
-- `react`
-- `redux`
-- `react-redux`
-- `styled-components`
-- `express`
-- `mongoose`
-- `body-parser`
-- `cors`
+- `@reduxjs/toolkit`: ^2.5.1
+- `@testing-library/user-event`: ^14.4.3
+- `@types/react`: ^18.2.64
+- `@types/react-dom`: ^18.2.18
+- `react`: ^18.2.0
+- `react-dom`: ^18.2.0
+- `react-redux`: ^9.2.0
+- `react-router-dom`: ^7.1.5
+- `react-router-hash-link`: ^2.4.3
+- `react-scripts`: ^5.0.1
+- `styled-components`: ^5.3.6
+- `web-vitals`: ^2.1.4
 
 ### Dependências de Desenvolvimento
 
-- `typescript`
-- `ts-node`
-- `nodemon`
-- `jest`
-- `ts-jest`
-- `cypress`
-- `eslint`
-- `prettier`
+- `@babel/core`: ^7.26.8
+- `@babel/preset-env`: ^7.26.8
+- `@babel/preset-react`: ^7.26.3
+- `@babel/preset-typescript`: ^7.26.0
+- `@babel/register`: ^7.25.9
+- `@testing-library/jest-dom`: ^6.6.3
+- `@testing-library/react`: ^16.2.0
+- `@types/react-input-mask`: ^3.0.6
+- `@types/react-router-hash-link`: ^2.4.9
+- `@types/styled-components`: ^5.1.26
+- `@typescript-eslint/eslint-plugin`: ^5.62.0
+- `eslint`: ^8.33.0
+- `eslint-config-prettier`: ^8.6.0
+- `eslint-plugin-prettier`: ^4.2.1
+- `eslint-plugin-react`: ^7.32.2
+- `eslint-plugin-react-hooks`: ^4.6.0
+- `formik`: ^2.4.6
+- `json-server`: ^1.0.0-beta.3
+- `msw`: ^2.7.0
+- `react-input-mask`: ^2.0.4
+- `react-spinners`: ^0.15.0
+- `ts-node`: ^10.9.2
+- `tsconfig-paths`: ^4.2.0
+- `typescript`: 4.9.5
+- `yup`: ^1.6.1
 
 ## Estrutura do Projeto
 
@@ -63,32 +85,23 @@ A estrutura do projeto é organizada da seguinte forma:
 
 ```
 /gameturf
-├── /frontend
-│   ├── /src
-│   │   ├── /components
-│   │   ├── /redux
-│   │   ├── /styles
-│   │   ├── App.tsx
-│   │   ├── index.tsx
-│   │   └── ...
-│   ├── package.json
+├── /src
+│   ├── /components
+│   ├── /pages
+│   ├── /services
+│   ├── /store
+│   ├── /styles
+│   ├── App.tsx
+│   ├── index.tsx
 │   └── ...
-├── /backend
-│   ├── /src
-│   │   ├── /controllers
-│   │   ├── /models
-│   │   ├── /routes
-│   │   ├── /services
-│   │   ├── app.ts
-│   │   ├── server.ts
-│   │   └── ...
-│   ├── package.json
+├── /public
+│   ├── index.html
+│   ├── manifest.json
 │   └── ...
-├── /infrastructure
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-│   ├── Jenkinsfile
-│   └── ...
+├── package.json
+├── tsconfig.json
+├── .eslintrc.json
+├── .prettierrc
 ├── README.md
 └── ...
 ```
@@ -98,9 +111,7 @@ A estrutura do projeto é organizada da seguinte forma:
 ### Pré-requisitos
 
 - Node.js
-- Docker
-- Kubernetes (opcional, para orquestração de containers)
-- AWS CLI (opcional, para integração com serviços AWS)
+- npm ou yarn
 
 ### Passos para Execução
 
@@ -111,30 +122,19 @@ A estrutura do projeto é organizada da seguinte forma:
    cd gameturf
    ```
 
-2. Instale as dependências do frontend e backend:
+2. Instale as dependências:
 
    ```bash
-   cd frontend
-   npm install
-   cd ../backend
    npm install
    ```
 
-3. Execute o frontend:
+3. Execute o projeto:
 
    ```bash
-   cd frontend
    npm start
    ```
 
-4. Execute o backend:
-
-   ```bash
-   cd backend
-   npm run dev
-   ```
-
-5. Acesse a aplicação em `http://localhost:3000`.
+4. Acesse a aplicação em `http://localhost:3000`.
 
 ## Contribuição
 
