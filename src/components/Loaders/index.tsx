@@ -9,7 +9,7 @@ const Loader = () => {
     return (
 
     <Container>
-        <PacmanLoader/>
+        <PacmanLoader color="#007AFF"/>
     </Container>
 
 
